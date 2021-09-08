@@ -28,7 +28,7 @@ public class BasicNavigation {
         } else {
             System.out.println("TEST FAILED");
         }
-
+         //go to another website within the same window
             driver.navigate().to("http://amazon.com");
 
             if (driver.getTitle().toLowerCase().contains("amazon")) {
@@ -36,7 +36,9 @@ public class BasicNavigation {
             }else{
                 System.out.println("TEST FAILED");
             }
-
+            //comeback to google
+        driver.navigate().back();
+            verifyEquals(driver.getTitle(), "Google");
 
             //must be at the end
             driver.close();//to close browser
